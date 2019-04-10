@@ -20,8 +20,8 @@ io.attach(server);
 io.on('connection', function(socket) {
     console.log('new user has connected');
 
-    socket.emit('connected', { sID: `${socket.id}`, message: 'new connection'} );
-    io.emit('connected', { notifications: "new user joined" });
+    socket.emit('connected', { sID: `${socket.id}`} );
+    io.emit('joined', { notifications: "new user joined" });
 
 
     // listen for an incoming message from anyone connected to the app

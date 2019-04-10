@@ -12,5 +12,9 @@ export default {
         return {
             matchedID: this.$parent.socketID == this.msg.id
         }
+    },
+
+    mounted:function(){
+        console.log(this.$parent.socketID);
     }
 }
