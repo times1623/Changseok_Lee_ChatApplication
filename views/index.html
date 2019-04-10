@@ -20,7 +20,7 @@
 		</section>
 
 		<section class="messages">
-			<p id="notifications" v-for="notification in notifications">{{ notification }}</p>
+				<p id="notifications" v-for="notification in notifications">{{ notification }}</p>
 			<ul id="messages" v-for="message in messages">
 				<!-- render a new component for every message -->
                 <newmessage :msg="message"></newmessage>				
