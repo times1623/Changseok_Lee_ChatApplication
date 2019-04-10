@@ -18,10 +18,11 @@
 				<input type="submit" @click.prevent="dispatchMessage">
 			</form>
 		</section>
-		
+
 		<section class="messages">
+			<p id="notifications">{{ notification }}</p>
 			<ul id="messages" v-for="message in messages">
-                <!-- render a new component for every message -->
+				<!-- render a new component for every message -->
                 <newmessage :msg="message"></newmessage>				
 			</ul>
 		</section>		

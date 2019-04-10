@@ -18,16 +18,17 @@ const server = app.listen(port, () => {
 io.attach(server);
 
 io.on('connection', function(socket) {
-    console.log('a user has connected');
+    console.log('new user has connected');
 
-    socket.emit('connected', { sID: `${socket.id}`, message: 'new connection'} );
+    socket.emit('connected', { sID: `${socket.id}`, message: 'new connection', notifications: "new user joined"} );
+
 
     // listen for an incoming message from anyone connected to the app
     socket.on('chat message', function(msg) {
         console.log('message: ', msg, 'socket:', socket.id);
 
         // send the message to everyone connected to the app
-        io.emit('chat message', { id: `${socket.id}`, message: msg });
+        io.emit('chat message', { id: `${socket.id}`, message: msg, notification: "new user has connected"});
     })
 
     socket.on('disconnect', function() {
