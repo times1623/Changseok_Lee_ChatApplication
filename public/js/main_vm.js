@@ -5,7 +5,7 @@ const socket = io();
 function logConnect({sID, message, notifications}) { //{sID, message}
     console.log(sID, message, notifications);
     vm.socketID = sID;
-    vm.notification = notifications;
+    vm.notifications.push(notifications);
 }
 
 function appendMessage(message) {
@@ -19,6 +19,7 @@ const vm = new Vue({
         nickname: "",
         message: "",
         notification: "",
+        notifications: [],
         messages: []
 
     },
