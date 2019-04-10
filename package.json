@@ -1,0 +1,23 @@
+{
+  "name": "changseok_lee_chatapplication",
+  "version": "1.0.0",
+  "description": "social media app ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Changseok Lee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/times1623/Changseok_Lee_ChatApplication.git"
+  },
+  "bugs": {
+    "url": "https://github.com/times1623/Changseok_Lee_ChatApplication.git"
+  },
+  "homepage": "https://github.com/times1623/Changseok_Lee_ChatApplication#readme"
+}
