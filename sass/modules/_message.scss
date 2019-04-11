@@ -16,3 +16,14 @@
     background-color: #86bf9d;
     color: white;
 }
+
+#notifications, #disconnections {
+    margin: 0 auto;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+    border-radius: 0;
+    float: none;
+    margin-bottom: 10px;
+}

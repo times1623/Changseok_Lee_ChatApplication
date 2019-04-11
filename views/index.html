@@ -17,13 +17,15 @@
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
 				<input type="submit" @click.prevent="dispatchMessage">
 			</form>
+			<p id="userConnect">Current Users: {{ userconnect.currentusers }}</p>	
 		</section>
 
 		<section class="messages">
-			<p id="notifications" v-for="notification in notifications">{{ notification }}</p>
+			<p id="notifications" v-for="notification in notifications" class="new-message">{{ notification }}</p>
+			<p id="disconnections" v-for="disconnection in disconnections" class="new-message center">{{ disconnection }}</p>	
 			<ul id="messages" v-for="message in messages">
 				<!-- render a new component for every message -->
-                <newmessage :msg="message"></newmessage>				
+				<newmessage :msg="message"></newmessage>		
 			</ul>
 		</section>		
 	</main>

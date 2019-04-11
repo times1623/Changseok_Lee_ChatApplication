@@ -15,13 +15,17 @@ const server = app.listen(port, () => {
     console.log(`app is running on port ${port}`);
 });
 
+var currentusers = 0;
+
 io.attach(server);
 
 io.on('connection', function(socket) {
     console.log('new user has connected');
-
+    ++currentusers;
+   
     socket.emit('connected', { sID: `${socket.id}`} );
-    io.emit('joined', { notifications: "new user joined" });
+    io.emit('userconnect', { currentusers: currentusers });
+    io.emit('joined', { notifications: "New User Joined" });
 
 
     // listen for an incoming message from anyone connected to the app
@@ -34,5 +38,8 @@ io.on('connection', function(socket) {
 
     socket.on('disconnect', function() {
         console.log('a user has disconnected');
+        --currentusers;
+        io.emit('userconnect', { currentusers: currentusers });
+        io.emit('disconnect', {disconnection: "User Disconnected"});
     });
 });
