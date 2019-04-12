@@ -5,7 +5,9 @@
 
 html, body { height: 100%; }
 
-body { font: 16px Helvetica, Arial; }
+body { font: 16px Helvetica, Arial; 
+	background: linear-gradient(45deg, #FFBD00, rgb(158, 237, 255));
+}
 
 main { 
 	display: flex;
@@ -33,13 +35,12 @@ main {
 .form-container, .messages { padding: 20px; }
 .form-container { 
 	flex: 1; 
-	border: 6px solid #FFBD00;
+	background-color: rgba(000,000,000,.2);
 	label { display: block; margin-bottom: 0.5rem; }
 }
 
 .messages { 
 	flex: 2;
-	border: 6px solid black; 
 }
 
 input, textarea { 
@@ -82,7 +83,6 @@ form {
 
 #messages {
 	list-style-type: none; margin: 0; padding: 0;
-
 	li { padding: 5px 10px;	}
 	li:nth-child(odd) { background: #eee; }
 }

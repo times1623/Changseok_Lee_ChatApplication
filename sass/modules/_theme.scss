@@ -5,6 +5,8 @@
 .themeChange {
     // message box css starts from here
 
+    background: linear-gradient(45deg, #2F3645, rgb(102, 63, 193));
+
     .new-message { 
         span { font-size: 0.8rem; display: block; margin-bottom: 2px; }
     
@@ -42,8 +44,7 @@
     .form-container, .messages { padding: 20px; }
     .form-container { 
         flex: 1; 
-        border: 6px solid #E2F9F9;
-        background-color: #2F3645;
+        background-color: rgba(000,000,000,.2);
         label { display: block; margin-bottom: 0.5rem; }
     }
 
@@ -62,7 +63,6 @@
     
     .messages { 
         flex: 2;
-        background-color: #2F3645;
         border: none; 
     }
     
