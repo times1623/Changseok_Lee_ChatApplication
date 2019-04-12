@@ -37,8 +37,8 @@ const vm = new Vue({
     },
 
     watch: {
-        message(line) {
-            if(line){
+        message(write) {
+            if(write){
                 socket.emit('typing', this.nickname);
             }else{
                 socket.emit('stoptyping');
@@ -55,6 +55,13 @@ const vm = new Vue({
           });
         socket.on('userconnect', (currentusers) => {
             vm.userconnect = currentusers;
+        });
+    },
+
+    mounted() {
+        var changeTheme = document.querySelector('#theme');
+        changeTheme.addEventListener('click', function () {
+            document.querySelector("body").classList.toggle('themeChange');
         });
     },
 
