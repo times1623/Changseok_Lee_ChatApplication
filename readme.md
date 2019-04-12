@@ -12,7 +12,7 @@ engine client.
 ![image](public/images/bright.png)
 
 
-###'Bright Mode'
+###'Dark Mode'
 ![image](public/images/dark.png)
 
 ## Tools used during development phase:
