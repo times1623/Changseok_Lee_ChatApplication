@@ -31,11 +31,28 @@ const vm = new Vue({
         disconnection: "", 
         disconnections: [],
         userconnect: "",
+        typing: false,
         messages: []
 
     },
 
+    watch: {
+        message(line) {
+            if(line){
+                socket.emit('typing', this.nickname);
+            }else{
+                socket.emit('stoptyping');
+            }
+        }
+      },
+
     created() {
+        socket.on('typing', (name) => {
+            this.typing = name || "Anonymous";
+          });
+          socket.on('stoptyping', () => {
+            this.typing = false;
+          });
         socket.on('userconnect', (currentusers) => {
             vm.userconnect = currentusers;
         });
@@ -49,7 +66,10 @@ const vm = new Vue({
             // reset the message field
             this.message = "";
 
-        }
+        },
+        isTyping() {
+            socket.emit('typing', this.nickname);
+        },
     },
     components: {
         newmessage: ChatMessage

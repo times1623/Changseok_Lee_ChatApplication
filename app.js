@@ -36,6 +36,13 @@ io.on('connection', function(socket) {
         io.emit('chat message', { id: `${socket.id}`, message: msg, notification: "new user has connected"});
     })
 
+    socket.on('typing', function(name){
+        io.emit('typing', name);
+      });
+      socket.on('stoptyping', function() {
+        io.emit('typing');
+      });
+
     socket.on('disconnect', function() {
         console.log('a user has disconnected');
         --currentusers;

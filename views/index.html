@@ -20,6 +20,7 @@
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
 				<input id="submit" type="submit" @click.prevent="dispatchMessage">
 			</form>
+			<p v-if="typing" class="lb">{{typing}} is typing message</p>
 			<p id="userConnect" class="lb">Current Users: {{ userconnect.currentusers }}</p>
 			
 		</section>
